@@ -39,7 +39,7 @@ class Parser():
 
 
     def create_csv(self):
-        with open("app/output_files/data.csv", mode="w", encoding='utf-8') as f:
+        with open("output_files/data.csv", mode="w", encoding='utf-8') as f:
             fields = ['Дата', 'Описание', 'Пункт назанчения', 'Вес', 'Габариты']
             file_writer = csv.writer(f, delimiter = ",")
             file_writer.writerow(fields)
@@ -58,13 +58,9 @@ class Parser():
             'Вес': self.weight,
             'Габариты' : self.gab
         }
-        with open('app/output_files/data.json', 'w') as f:
+        with open('output_files/data.json', 'w') as f:
             json.dump(js, f, ensure_ascii=False)
 
-
-
-b = Parser('LP2056555')
-print(b.get_page_data())
 
 
 

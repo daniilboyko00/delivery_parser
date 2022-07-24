@@ -1,4 +1,4 @@
-from distutils.cmd import Command
+
 from imaplib import Commands
 import logging
 from aiogram import Bot, Dispatcher, executor, types
@@ -47,13 +47,13 @@ async def get_csv(message: types.Message, state: FSMContext):
     data = await state.get_data()
     if message.text == '/csv':
         b.create_csv()
-        file_csv = aiogram.types.input_file.InputFile('app/output_files/data.csv','data.csv')
+        file_csv = aiogram.types.input_file.InputFile('output_files/data.csv','data.csv')
         await Bot.send_document(bot,chat_id=user_id,document=file_csv)
         await message.answer(f"Путь поссылки №{data['package_number']} в формате csv. Введите /json чтобы получить json, либо /cancel чтобы заново ввести номер")
         await UserState.format_choice.set()
     elif message.text == '/json':
         b.create_json()
-        file_json = aiogram.types.input_file.InputFile('app/output_files/data.json','data.json')
+        file_json = aiogram.types.input_file.InputFile('output_files/data.json','data.json')
         await Bot.send_document(bot,chat_id=user_id,document=file_json)
         await message.answer(f"Путь поссылки №{data['package_number']} в формате json. Введите /csv чтобы получить csv, либо /cancel чтобы заново ввести номер")
         await UserState.format_choice.set()
