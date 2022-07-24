@@ -1,0 +1,148 @@
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-24' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'b' is not defined")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 49, in get_csv
+    b.create_csv()
+NameError: name 'b' is not defined
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("object Parser can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 38, in input_number
+    return await b
+TypeError: object Parser can't be used in 'await' expression
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'b' is not defined")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 49, in get_csv
+    b.create_csv()
+NameError: name 'b' is not defined
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-13' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("object Parser can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 38, in input_number
+    await b
+TypeError: object Parser can't be used in 'await' expression
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=NameError("name 'b' is not defined")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 49, in get_csv
+    b.create_csv()
+NameError: name 'b' is not defined
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("input_number() missing 2 required positional arguments: 'message' and 'state'")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 49, in get_csv
+    await input_number().create_csv()
+TypeError: input_number() missing 2 required positional arguments: 'message' and 'state'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'coroutine' object has no attribute 'get_csv'")>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 49, in get_csv
+    await input_number(message, state).get_csv()
+AttributeError: 'coroutine' object has no attribute 'get_csv'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 53, in get_csv
+    file_json = aiogram.types.input_file.InputFile('output_files/data.json','data.json')
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\types\input_file.py", line 40, in __init__
+    self._file = open(path_or_bytesio, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'output_files/data.json'
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-18' coro=<Dispatcher._process_polling_updates() done, defined at D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=FileNotFoundError(2, 'No such file or directory')>
+Traceback (most recent call last):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\dispatcher\handler.py", line 116, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "d:\1\delivery_parser\app\bot.py", line 53, in get_csv
+    file_json = aiogram.types.input_file.InputFile('output_files/data.json','data.json')
+  File "D:\1\delivery_parser\app\env\lib\site-packages\aiogram\types\input_file.py", line 40, in __init__
+    self._file = open(path_or_bytesio, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'output_files/data.json'

@@ -5,65 +5,43 @@ import csv
 import json
 import re
 
-class Parser():
+# def validate_number(func):
+#     def wrapper(number):
+#         if not type(number) == int:
+#             print('1')
 
-    def __init__(self, number) -> None:
-        self.validate_number(number)
-        self.number = number
 
-
-    @classmethod
-    def validate_number(cls, number):
-        result = re.match(r'^\w{2}\d{7}', number)
-        if not result:
-            print ("Номер не соответсвтует шаблону")
-        
-
-    def get_page_data(self) -> Boolean:
-        params = {'tracking_number' : self.number}
+def get_page_data(number):
+        params = {'tracking_number': number}
+        fields = ['Дата', 'Описание', 'Пункт назанчения', 'Вес', 'Габариты']
         r = requests.get('https://litemf.com/ru/tracking',params=params)
-        self.my_response = requests.get('https://litemf.com/ru/tracking',params=params).text
-        if r.status_code == 200:
-            try:
-                self.page_data = BeautifulSoup(self.my_response, 'html.parser')
-                self.final_page_data = list(self.page_data.find_all('li',attrs={"class": "checkpoint"}))
-                self.date = [item.find(class_ = "date").get_text() for item in self.final_page_data]
-                self.desc = [item.find(class_ = "description").get_text() for item in self.final_page_data ]
-                self.name = [item.find(class_ = "name").get_text() for item in self.final_page_data ]
-                self.weight, self.gab = self.page_data.find_all('dd')[0].get_text(), self.page_data.find_all('dd')[1].get_text().replace('\n','').replace(' ','')
-                return True
-            except:
-                return False 
-        else:
-            raise ConnectionError
-
-
-    def create_csv(self):
-        with open("output_files/data.csv", mode="w", encoding='utf-8') as f:
-            fields = ['Дата', 'Описание', 'Пункт назанчения', 'Вес', 'Габариты']
-            file_writer = csv.writer(f, delimiter = ",")
+        page_text = r.text
+        try:
+            page_data = BeautifulSoup(page_text, 'html.parser')
+            tracking_list = page_data.find_all('li',attrs={"class": "checkpoint"})
+            date = [item.find(class_ = "date").get_text() for item in tracking_list]
+            desc = [item.find(class_ = "description").get_text() for item in tracking_list ]
+            name = [item.find(class_ = "name").get_text() for item in tracking_list ]
+            weight_and_gab = page_data.find_all('dd')[0].get_text(), page_data.find_all('dd')[1].get_text().replace('\n','').replace(' ','')
+        except:
+            return False
+        with open("output_files/data.csv", mode="w", encoding='utf-8') as f_csv:
+            file_writer = csv.writer(f_csv, delimiter = ",")
             file_writer.writerow(fields)
-            for row in range(len(self.date)):
+            for row in range(len(date)):
                 if row == 0:
-                    file_writer.writerow([self.date[row], self.desc[row], self.name[row], self.weight, self.gab])
+                    file_writer.writerow([date[row], desc[row], name[row], weight_and_gab[0], weight_and_gab[1]])
                 else:
-                    file_writer.writerow([self.date[row], self.desc[row], self.name[row]])
+                    file_writer.writerow([date[row], desc[row], name[row]])
 
+        with open('output_files/data.json', 'w') as f_json:
+            json.dump({
+        'Даты': date,
+        'Описания': desc,
+        'Пункты назначения': name,
+        'Вес': weight_and_gab[0],
+        'Габариты' : weight_and_gab[1]
+        }, f_json, ensure_ascii=False)
+        return True
 
-    def create_json(self):
-        js = {
-            'Даты': self.date,
-            'Описания': self.desc,
-            'Пункты назначения': self.name,
-            'Вес': self.weight,
-            'Габариты' : self.gab
-        }
-        with open('output_files/data.json', 'w') as f:
-            json.dump(js, f, ensure_ascii=False)
-
-
-
-
-
-
-
+get_page_data('LP2056555')
