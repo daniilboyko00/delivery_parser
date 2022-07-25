@@ -1,17 +1,18 @@
-from xmlrpc.client import Boolean
 import requests
 from bs4 import BeautifulSoup
 import csv
 import json
 import re
 
-# def validate_number(func):
-#     def wrapper(number):
-#         if not type(number) == int:
-#             print('1')
+def validate_number(func):
+    def wrapper(*args, **kwargs):
+        if not re.search(r"^\w{2}\d{7}$",args[0]):
+            return False
+    return wrapper  
 
 
-def get_page_data(number):
+@validate_number
+def get_page_data(number) -> bool:
         params = {'tracking_number': number}
         fields = ['Дата', 'Описание', 'Пункт назанчения', 'Вес', 'Габариты']
         r = requests.get('https://litemf.com/ru/tracking',params=params)
