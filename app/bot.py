@@ -31,8 +31,7 @@ async def number_start(message: types.Message):
 async def input_number(message: types.Message, state: FSMContext):
     await state.update_data(package_number = message.text.upper())
     data = await state.get_data()
-
-    if True:
+    if get_page_data(data['package_number']):
         await message.answer('Введите /csv чтобы получить файл в формате csv, /json, чтобы в json формате')
         await UserState.format_choice.set()
     else: 

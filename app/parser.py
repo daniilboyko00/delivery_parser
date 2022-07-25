@@ -43,5 +43,3 @@ def get_page_data(number):
         'Габариты' : weight_and_gab[1]
         }, f_json, ensure_ascii=False)
         return True
-
-get_page_data('LP2056555')
